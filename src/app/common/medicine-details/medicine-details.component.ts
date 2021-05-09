@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/behaviour-services/login.service'
 })
 export class MedicineDetailsComponent implements OnInit {
   med_details: Medicine;
-  flag:boolean = false;
+  flag:boolean = true;
   constructor(private route: ActivatedRoute,private medservice: MedicineService,private router:Router,private behavior_subject:LoginService) { 
     if(localStorage.getItem('username')!=null){
       this.behavior_subject.login_convert.next(localStorage.getItem('username'));
@@ -22,7 +22,7 @@ export class MedicineDetailsComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('role')=='Admin')
     {
-      this.flag = true;
+      this.flag = false;
     }
     this.route.queryParamMap.subscribe(
       params =>{

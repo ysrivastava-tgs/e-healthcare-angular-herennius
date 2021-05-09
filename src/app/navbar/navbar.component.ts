@@ -22,12 +22,15 @@ export class NavbarComponent implements OnInit {
       document.getElementById('login').style.pointerEvents = "none";
       document.getElementById('register').style.display = "none";
       document.getElementById('logout').style.display = "block";
-      if(localStorage.getItem('role')=='User'){
+      if(localStorage.getItem('role')=='User' || localStorage.getItem('role')==null){
       document.getElementById('orders').style.display = "block";
       this.flag = true;
       }
-      if(localStorage.getItem('role')=='Admin')
+      if(localStorage.getItem('role')=='Admin'){
       document.getElementById('orders').style.display = "none";
+    this.flag = false;
+    }
+      
      // document.getElementById('logout').style.pointerEvents = "visible";
      }
      else{
@@ -36,6 +39,7 @@ export class NavbarComponent implements OnInit {
       document.getElementById('register').style.display = "block";
       document.getElementById('orders').style.display = "none";
       document.getElementById('logout').style.display = "none";
+      this.flag = true;
      // document.getElementById('logout').style.pointerEvents = "cursor";
      }
      });

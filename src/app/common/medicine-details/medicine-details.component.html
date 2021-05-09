@@ -16,7 +16,7 @@
                 <h3>Seller: {{med_details['medicine_Seller']}}</h3>
                 <h3>Description: {{med_details['medicine_Description']}}</h3>
                 <h3 *ngIf="">Stock Left:{{med_details['medicine_Qty']}}</h3>
-                <a class="btn btn-primary btn-block" (click) = "cart(med_details)" *ngIf="med_details['medicine_Qty']!=0">Add to cart</a>
+                <a class="btn btn-primary btn-block" (click) = "cart(med_details)" *ngIf="med_details['medicine_Qty']!=0 && flag">Add to cart</a>
                 <a class="disabled btn" style="color: red;" *ngIf="med_details['medicine_Qty']==0">Not available</a>
             </div>
        </div>
