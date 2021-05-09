@@ -1,0 +1,56 @@
+<br>
+<br>
+<div class="container">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hello...!!</strong> You can sort table by clicking the headers of medicine id, medicine name, medicine seller and medicine quantity.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+<div class="container" id="visibility">
+    <a class="btn btn-danger" (click) = "add()"><i class="fas fa-plus-circle"></i>Add more medicine</a>
+</div>
+<br>
+<br>
+<div class="container table-responsive">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" >Category Id</th>
+            <th scope="col">Category Name</th>
+            <th scope="col" [appSort] = " medlist" data-order="desc" data-name="medicine_Id" id="medid">Medicine Id</th>
+            <th scope="col" [appSort] = " medlist" data-order="desc" data-name="medicine_Name" id="medname">Medicine Name</th>
+           
+            <th scope="col" >Medicine Price</th>
+            <th scope="col" [appSort] = " medlist" data-order="desc" data-name="medicine_Seller" id="medseller">Medicine Seller</th>
+            <th scope="col">Medicine Description</th>
+            <th scope="col" [appSort] = " medlist" data-order="desc" data-name="medicine_Qty" id="medqty">Medicine Qty Left</th>
+            <th scope="col">                   
+              <pre>          </pre>
+            </th>
+            
+            
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let med of  medlist;let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{med.category_Id}}</td>
+            <td>{{med.category_Name}}</td>
+            <td>{{med.medicine_Id}}</td>
+            <td>{{med.medicine_Name}}</td>
+            <td>{{med.medicine_Price}}</td>
+            <td>{{med.medicine_Seller}}</td>
+            <td>{{med.medicine_Description}}</td>
+            <td>{{med.medicine_Qty}}</td>
+            <td><a (click) = "getDetails(med.category_Id,med.medicine_Id)"><i class="fas fa-info-circle" style="cursor: pointer;"></i></a> |
+               <a (click) = "editDetails(med.category_Id,med.medicine_Id)"><i class="far fa-edit" style="cursor: pointer;"></i></a></td>
+           </tr>
+         
+        </tbody>
+      </table>
+      
+     
+</div>

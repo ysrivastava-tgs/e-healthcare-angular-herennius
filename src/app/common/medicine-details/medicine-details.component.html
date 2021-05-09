@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="mt-5 p">
+        <h1>Details - {{med_details['medicine_Name']}}</h1>
+    </div>
+    <div class="shadow p-3 mb-5 bg-white rounded mt-5">
+        
+        <!-- {{med_details[medicine_Img_Url]}} -->
+       <div class="row">
+            <div class="col-md-6">
+                <img src="{{med_details['medicine_Img_Url']}}" class="img-fluid img-thumbnail"/>
+            </div>
+            <div class="col-md-6">
+                <h3>Name of the medicine: {{med_details['medicine_Name']}}</h3>
+                <h3></h3>
+                <h3>Price: Rs{{med_details['medicine_Price']}}/-</h3>
+                <h3>Seller: {{med_details['medicine_Seller']}}</h3>
+                <h3>Description: {{med_details['medicine_Description']}}</h3>
+                <h3 *ngIf="">Stock Left:{{med_details['medicine_Qty']}}</h3>
+                <a class="btn btn-primary btn-block" (click) = "cart(med_details)" *ngIf="med_details['medicine_Qty']!=0">Add to cart</a>
+                <a class="disabled btn" style="color: red;" *ngIf="med_details['medicine_Qty']==0">Not available</a>
+            </div>
+       </div>
+    </div>
+</div>

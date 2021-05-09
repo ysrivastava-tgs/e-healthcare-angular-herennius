@@ -1,0 +1,44 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 img-thumbnail" >
+            <img src="{{product_details['medicine_Img_Url']}}" class="img-fluid"/>
+              <p style="text-align: center;">Category: {{product_details['category_Name']}}</p>
+              <p style="text-align: center;">Medicine Name: {{product_details['medicine_Name']}}</p>
+              <p style="text-align: center;">Seller: {{product_details['medicine_Seller']}}</p>
+              <p style="text-align: center;">Description: {{product_details['medicine_Description']}}</p>
+        </div>
+        <div class="col-md-8 img-thumbnail">
+           <div class="form-group">
+            <div>
+                <label for="oid">Order Id</label>
+                <input type="text" readonly id="oid" value="{{order_details['oid']}}" class="form-control"/>
+            </div>
+            <!-- <div>
+                <label for="oid">Order Id</label>
+                <input type="text" readonly id="oid"/>
+            </div> -->
+            <div>
+                <label for="medid">Medicine Id</label>
+                <input type="text" readonly id="medid" value="{{order_details['pid']}}" class="form-control"/>
+            </div>
+            <div>
+                <label for="qty">Qty ordered</label>
+                <input type="text" readonly id="qty" value="{{order_details['quantity']}}" class="form-control"/>
+            </div>
+            <div>
+                <label for="qty">Total Amount</label>
+                <input type="text" readonly id="qty" value="{{order_details['amount']}}" class="form-control"/>
+            </div>
+            <div>
+                <label for="address">Shipped At</label>
+                <input type="text" readonly id="address" value="{{order_details['shipping_Address']}}" class="form-control"/>
+            </div>
+            <div>
+                <label for="phone">Phone Numb</label>
+                <input type="text" readonly id="phone" value="{{userdetails['phoneNumber']}}" class="form-control"/>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>

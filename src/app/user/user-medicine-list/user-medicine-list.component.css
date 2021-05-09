@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+.th{
+    text-align: center;
+}
+
+#medid:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medname:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medseller:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medqty:hover{
+    cursor: pointer;
+    color: aqua;
+}
+h1{
+    font-family: 'New Tegomin', serif;
+    text-decoration: underline orange;
+}

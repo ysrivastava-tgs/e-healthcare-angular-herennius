@@ -1,0 +1,36 @@
+<br>
+<br>
+<div class="container">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hello...!!</strong> You can sort table by clicking the headers of category id and category name.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" [appSort] = "medicinecategory" data-order="desc" data-name="category_Id" id="cate-id">Category Id</th>
+            <th scope="col" [appSort] = "medicinecategory" data-order="desc" data-name="category_Name" id="cate-name">Category Name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let category of medicinecategory;let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{category.category_Id}}</td>
+            <td>{{category.category_Name}}</td>
+            <td><a  class="btn btn-danger" (click) = "getmedicinelistbycategory(category.category_Id,category.category_Name)"><i class="fas fa-angle-double-right"></i></a></td>
+           </tr>
+         
+        </tbody>
+      </table>
+      
+     
+</div>

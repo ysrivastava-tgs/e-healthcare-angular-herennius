@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="mt-5" style="text-align: center;">Order Confirmation</h1>
+   <div class="row">
+    <div class="col-md-5">
+        <div class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block">
+            <img src="{{item['medicine_Img_Url']}}" class="img-fluid img-thumbnail  mx-auto d-block"/>
+            <div class="mx-auto d-block">
+                <h5 style="text-align: center;">Medicine Name: {{item['medicine_Name']}}</h5>
+            <h5 style="text-align: center;">Total Qty: {{qty}}</h5>
+            <h5 style="text-align: center;">Total amt: {{item['medicine_Price']}}</h5>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div>
+            <form [formGroup] = "orderSubmitForm" (ngSubmit) = "submit()">
+             <div class="form-group">
+                <label for="username">UserName</label>
+                <input type="text" formControlName="username" class="form-control" id="username" aria-describedby="emailHelp" readonly >
+             </div>
+              <div class="form-group">
+                <label for="pid">Product Id</label>
+                <input type="text" formControlName="pid" class="form-control" id="pid" aria-describedby="emailHelp" readonly>
+            </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" formControlName="quantity" class="form-control" id="quantity" aria-describedby="emailHelp" readonly>
+            </div>
+              <div class="form-group">
+                <label for="amount">Total Billing Amount</label>
+                <input type="number" formControlName="amount" class="form-control" id="amount" aria-describedby="emailHelp" readonly>
+            </div>
+              <div class="form-group">
+                <label for="createdat">Order Date & Time</label>
+                <input type="text" formControlName="createdat" class="form-control" id="createdat" aria-describedby="emailHelp" readonly>
+            </div>
+              <div class="form-group">
+                <label for="shippingaddress">Shipping Address</label>
+                <input type="text" formControlName="shippingaddress" class="form-control" id="shippingaddress" aria-describedby="emailHelp" readonly>
+            </div>
+              <button type="submit" class="btn btn-primary" [disabled]="orderSubmitForm.invalid">Place Order</button>
+            
+              </form>
+              </div>
+    </div>
+ </div>
+  </div>

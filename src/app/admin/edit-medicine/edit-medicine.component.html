@@ -1,0 +1,47 @@
+<div class="container">
+    <span id="error"></span>
+<h1 class="mt-5">Edit Medicine</h1>
+<div *ngIf = "flag">
+<form [formGroup] = "editMedicineForm" (ngSubmit) = "submit()">
+ 
+  <div class="form-group">
+    <label for="medicinecategory">Choose Category-Name</label>
+    <select formControlName="medicinecategory" id="medicinecategory" class="form-control">
+        <option>Select option</option>
+        <option *ngFor="let cate of medicinecate">{{cate.category_Id}} | {{cate.category_Name}}</option>
+    </select>
+
+  </div>
+ <div class="form-group">
+    <label for="medicineid">Enter Medicine-Id</label>
+    <input type="text" formControlName="medicineid" class="form-control" id="medicineid" aria-describedby="emailHelp" >
+ </div>
+  <div class="form-group">
+    <label for="medicinename">Enter Medicine-Name</label>
+    <input type="text" formControlName="medicinename" class="form-control" id="medicinename" aria-describedby="emailHelp" value="helo">
+</div>
+  <div class="form-group">
+    <label for="medicineimage">Enter Image Url</label>
+    <input type="text" formControlName="medicineimage" class="form-control" id="medicineimage" aria-describedby="emailHelp" value="{{med_details['medicine_Img_Url']}}">
+</div>
+  <div class="form-group">
+    <label for="medicineprice">Enter Medicine-Price</label>
+    <input type="number" formControlName="medicineprice" class="form-control" id="medicineprice" aria-describedby="emailHelp" value="{{med_details['medicine_Price']}}">
+</div>
+  <div class="form-group">
+    <label for="medicineseller">Enter Seller-Name</label>
+    <input type="text" formControlName="medicineseller" class="form-control" id="medicineseller" aria-describedby="emailHelp" value="{{med_details['medicine_Seller']}}">
+</div>
+  <div class="form-group">
+    <label for="medicinedescription">Enter Description</label>
+    <input type="text" formControlName="medicinedescription" class="form-control" id="medicinedescription" aria-describedby="emailHelp" value="{{med_details['medicine_Description']}}">
+</div>
+  <div class="form-group">
+    <label for="medicineqty">Enter Medicine-Quantity</label>
+    <input type="number" formControlName="medicineqty" class="form-control" id="medicineqty" aria-describedby="emailHelp" value="{{med_details['medicine_Price']}}">
+</div>
+<button type="submit" class="btn btn-primary" [disabled]="editMedicineForm.invalid">Edit </button>
+
+  </form>
+  </div>
+</div>

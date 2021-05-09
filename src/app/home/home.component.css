@@ -1,0 +1,8 @@
+.bg{
+    background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_643024904_20001334181884391236_361786.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 675px;
+}

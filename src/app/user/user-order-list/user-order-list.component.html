@@ -1,0 +1,29 @@
+<div class="container mt-5 table-responsive">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">Product Id</th>
+            <th scope="col">Billing Amount</th>
+            <th scope="col">Order Date & Time</th>
+            <th scope="col">Shipped At</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of order_list">
+            <th scope="row" >{{order.oid}}</th>
+            <td>{{order.pid}}</td>
+            <td>Rs {{order.amount}}/-</td>
+            <td>{{order.createdAt}}</td>
+            <td>{{order.shipping_Address}}</td>
+            <td (click) = "details(order.oid)" style="cursor: pointer;"><i class="fas fa-angle-double-right"></i></td>
+          </tr>
+         
+        </tbody>
+      </table>
+      
+     
+</div>
+
+

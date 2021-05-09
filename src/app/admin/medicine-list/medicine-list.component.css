@@ -1,0 +1,20 @@
+.th{
+    text-align: center;
+}
+
+#medid:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medname:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medseller:hover{
+    cursor: pointer;
+    color: aqua;
+}
+#medqty:hover{
+    cursor: pointer;
+    color: aqua;
+}

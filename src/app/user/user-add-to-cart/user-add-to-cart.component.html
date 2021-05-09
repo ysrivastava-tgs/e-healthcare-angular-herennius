@@ -1,0 +1,46 @@
+<div class="container mt-5" *ngIf="flag">
+   <div class="row">
+    <div class="col-md-7">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            <small>Order Summary</small>
+           <div class="row">
+                <div class="col-md-8">
+                  
+                       <span>Categoy Type: {{med.category_Name}}</span><br>
+                       <span>Medicine Name: {{med.medicine_Name}}</span><br>
+                       <span>Only {{med.medicine_Qty}} in stock left</span><br>
+                       <span>Seller: {{med.medicine_Seller}}</span>
+                    
+                </div>
+                <div class="col-md-4">
+                       <span id="update"> Rs {{med.medicine_Price}} /-</span><br>
+                       <span>Qty:</span><br>
+                        <input type="number" id="value"(change)="fun($event)" min="1" value="1" max="{{med['medicine_Qty']}}"/><br>
+                        <span (click) = "remove()" style="cursor: pointer;"><i class="far fa-trash-alt"></i> Remove</span>
+                </div>
+           </div>
+            
+           
+        </div>
+    </div>
+   
+    <div class="col-md-5 shadow-lg rounded">
+        <small>Payment Details</small>
+        <div id="update2">
+            MRP Total Rs {{med.medicine_Price}}
+        </div>
+        <a class="btn btn-primary" (click) = "confirm()">Checkout</a>
+    </div>
+  
+   </div>
+</div>
+<div class="container" *ngIf="!flag">
+    <img src="https://www.meerabasu.in/assets/images/empty-cart.png" class="rounded mx-auto d-block mt-5 img-fluid" >
+    <div class="d-flex justify-content-center">Your Cart is empty!</div><br>
+        <div class="d-flex justify-content-center">
+            <small>You have no items added in the cart.</small> </div>
+            <br>
+            <span class="d-flex justify-content-center">
+        <small>Explore and add products you like!</small></span>
+       
+</div>

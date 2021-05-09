@@ -1,0 +1,32 @@
+<div class="container">
+    <span id="error"></span>
+<h1 class="mt-5">Add Medicine-Category</h1>
+<form [formGroup] = "addcategoryForm" (ngSubmit) = "submit()">
+    <div class="form-group">
+      <label for="categoryid">Enter Category-Id</label>
+      <input type="text" formControlName="categoryid" class="form-control" id="categoryid" aria-describedby="emailHelp" >
+      <!-- <div style="color: red;" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">
+        <span *ngIf = "loginForm.get('username').errors.required">
+        <small>
+            *UserName Required
+        </small>
+    </span>
+    </div> -->
+    </div>
+   
+      <div class="form-group">
+        <label for="categoryname">Enter Category-Name</label>
+        <input type="text" formControlName="categoryname" class="form-control" id="categoryname" aria-describedby="emailHelp">
+        </div>
+        <!-- <div style="color: red;" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+          <span *ngIf = "loginForm.get('password').errors.required">
+          <small>
+              *Password Required
+          </small>
+      </span>
+      </div> -->
+      
+   
+    <button type="submit" class="btn btn-primary" [disabled]="addcategoryForm.invalid">Add Category</button>
+  </form>
+</div>

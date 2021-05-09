@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+h1{
+    font-family: 'Goblin One', cursive;
+    text-align: center;
+    border-bottom: solid orange;
+}
